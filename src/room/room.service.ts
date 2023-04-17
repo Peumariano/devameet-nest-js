@@ -72,7 +72,7 @@ export class RoomService {
         if(loogedUserInRoom){
             await this.positionModel.findByIdAndUpdate({_id: loogedUserInRoom._id},position);
         }else{
-            if(usersInRoom && usersInRoom.length > 10){
+            if(usersInRoom && usersInRoom.length > 10 && position === position){
                 throw new BadRequestException(RoomMessagesHelper.ROOM_MAX_USERS);
             };
 
