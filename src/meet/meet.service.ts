@@ -15,7 +15,8 @@ export class MeetService {
 
     constructor(
         @InjectModel(Meet.name) private readonly model: Model<MeetDocument>,
-        @InjectModel(MeetObject.name) private readonly objectModel: Model<MeetObjectDocument>,
+        @InjectModel(MeetObject.name)
+        private readonly objectModel: Model<MeetObjectDocument>,
         private readonly userService: UserService
     ){}
 

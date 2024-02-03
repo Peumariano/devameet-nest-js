@@ -1,4 +1,4 @@
-import {OnGatewayConnection, OnGatewayDisconnect, OnGatewayInit, SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
+import {OnGatewayDisconnect, OnGatewayInit, SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
 import { RoomService } from './room.service';
 import { Logger } from '@nestjs/common';
 import { Server, Socket } from 'socket.io';
@@ -56,9 +56,9 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
       const dto = {
         link,
         userId,
-        x: 1,
-        y: 1,
-        orientation: 'front'
+        x: 2,
+        y: 2,
+        orientation: 'down'
       } as UpdateUserPositionDto
 
       await this.service.updateUserPosition(client.id, dto);
